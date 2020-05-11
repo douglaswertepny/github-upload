@@ -80,7 +80,6 @@ def exponential_fit(df,n,m):
     df_temp2 = pd.DataFrame(df_fit['Deaths']/(df_fit['Deaths']+df_fit['Recoveries']),columns=['Death Rates'])
     df_fit = pd.concat([df_fit,df_temp1], axis=1, sort=False)
     df_fit = pd.concat([df_fit,df_temp2], axis=1, sort=False)
-    print(df_temp2)
     return df_fit
 
 ######################## Calculates Results Using Functions #############################
@@ -90,6 +89,7 @@ df_fit = exponential_fit(df,day_fits,day_pro)
 print('Most Recenent Data: ' + str(df['Date'][len(df['Date'])-1]))
 for x in ['Total Cases','Recoveries','Deaths']:
     print(rate_of_growth(df,x,day_fits)[2])
+print('Current Death Rate Using Total Number of Closed Cases:\n\t' + str(round(100*df['Death Rate'][len(df['Death Rate'])-1],1))+'%')
     
 ######################## Plots Figures #############################
 # Plotting Raw Data Log
