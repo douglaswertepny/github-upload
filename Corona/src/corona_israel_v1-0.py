@@ -26,7 +26,7 @@ Prints and saves graphs:
 day_fits = 5 # Number of days the program uses to fit the data
 day_pro = 5 # Number of days the fits project
 rolling_mean = 7 # Number of days used for the rolling mean of new cases
-name ='Corona Data - wiki.csv' # Imported file name
+name ='Corona Data.csv' # Imported file name
 
 ######################## Imports Packages #############################
 import pandas as pd
